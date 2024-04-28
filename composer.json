@@ -8,6 +8,7 @@
         "php": "^8.2",
         "fakerphp/faker": "^1.23",
         "intervention/image": "*",
+        "intervention/image-laravel": "*",
         "laravel/framework": "^11.0",
         "laravel/helpers": "*",
         "laravel/sanctum": "^4.0",
