@@ -21,6 +21,7 @@ class UsersTableSeeder extends Seeder
           'contact'     => '01670605075',
           'created_at' => '2020-09-18 13:20:14',
           'updated_at' => '2020-09-18 13:20:14',
+          'email_verified_at' => '2020-09-18 13:20:14', // Add this line
           'password'  => bcrypt('11223344'),
         ]);
 
@@ -33,6 +34,7 @@ class UsersTableSeeder extends Seeder
           'contact'     => '01970605076',
           'created_at' => '2020-09-18 13:20:14',
           'updated_at' => '2020-09-18 13:20:14',
+          'email_verified_at' => '2020-09-18 13:20:14', // Add this line
           'password'  => bcrypt('11223344'),
         ]);
 
@@ -45,6 +47,7 @@ class UsersTableSeeder extends Seeder
           'contact'     => '01870605075',
           'created_at' => '2020-09-18 13:20:14',
           'updated_at' => '2020-09-18 13:20:14',
+          'email_verified_at' => '2020-09-18 13:20:14', // Add this line
           'password'  => bcrypt('11223344'),
         ]);
 
