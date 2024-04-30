@@ -1,6 +1,6 @@
 @extends('layouts.frontend.app')
 
-@section('title','Register')
+@section('title', 'Register')
     
 @section('content')
 {{-- <div class="container my-5">
@@ -157,7 +157,7 @@
         <div class="card">
           <div class="card-header">
             
-            <h3 style="color: white;"> <strong>Register</strong> </h3>
+            <h3 style="color: white; text-align:-webkit-center "> <strong>Register</strong> </h3>
           </div>
 
           <div class="card-body">

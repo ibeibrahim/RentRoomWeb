@@ -2,34 +2,32 @@
     padding: 0px;
     margin: 0px;
 }
-.navbar ul li{
-	height: auto;
-	margin: 0px 10px;
-
+.navbar ul li {
+    height: auto;
+    margin: 0px 10px;
 }
 .navbar ul li a {
     font-size: 18px;
-    color: rgb(58, 58, 58) ! important;
+    color: rgb(58, 58, 58) !important;
     font-weight: 400;
-	margin: 0 auto;
-	
+    margin: 0 auto;
 }
 
 .navbar ul li a:hover {
     background-color: rgb(22, 102, 108);
     color: rgb(255, 255, 255) !important;
-    border-radius:10px
+    border-radius: 5px;
 }
 
 #navbarlogo {
-    color: #188B93;
+    color: #188b93;
     font-weight: 800;
     font-family: Inter;
-    letter-spacing: 1px;   
+    letter-spacing: 1px;
 }
 
 .name {
-    font-family: 'Grandstander', cursive;
+    font-family: "Grandstander", cursive;
     padding: 15px 0px 5px 0px;
     font-size: 45px;
     margin-left: 12px;
@@ -62,19 +60,16 @@ footer {
     font-weight: 800;
 }
 
-
-
 .login-register {
     /* background-image: url('../img/login-register.jpg'); */
     background-attachment: fixed;
     background-size: cover;
 }
 
-
 #search {
     display: flex;
     align-items: center;
-    background: url('../img/cover.jpg');
+    background: url("../img/cover.jpg");
     background-attachment: fixed;
     background-size: cover;
     color: whitesmoke;
@@ -85,7 +80,6 @@ footer {
     padding: 60px;
     color: rgb(255, 255, 255);
     background-color: gray;
-
 }
 
 h2 .area-wise-not-available {
@@ -116,11 +110,6 @@ h2 .area-wise-not-available {
     background-color: rgb(194, 194, 194);
 }
 
-
-
-
-
-
 /* start content section */
 #content {
     margin: 50px 0px;
@@ -132,15 +121,13 @@ h2 .area-wise-not-available {
 
 #content .card {
     background-color: rgb(253, 249, 249);
-    transition: .5s;
+    transition: 0.5s;
     box-shadow: 6px 7px 10px #e9e5e5;
 }
 
 #content .card:hover {
     box-shadow: 6px 7px 20px #afaeae;
-    transition: .5s;
-
-
+    transition: 0.5s;
 }
 
 #content a {
@@ -158,8 +145,6 @@ h2 .area-wise-not-available {
     color: grey;
 }
 
-
-
 .address {
     color: grey;
 }
@@ -175,8 +160,6 @@ h2 .area-wise-not-available {
 
 /* end content section */
 
-
-
 /* ----------------------------------our-story----------------------------------- */
 #our-story {
     padding: 80px 0px;
@@ -186,19 +169,15 @@ h2 .area-wise-not-available {
     padding-top: 60px;
     font-weight: 800;
     padding-bottom: 15px;
-    font-family: 'Lalezar', cursive;
+    font-family: "Lalezar", cursive;
 }
 
 #our-story .col-md-6 .pera {
-
     font-weight: 500;
     padding-right: 48px;
     color: grey;
     text-align: justify;
 }
-
-
-
 
 .section-4 {
     margin-top: 10%;
@@ -219,6 +198,6 @@ h2 .area-wise-not-available {
 .section-4 .para-1 {
     color: white;
     margin-top: 7%;
-    font-family: 'Roboto Condensed';
+    font-family: "Roboto Condensed";
     font-size: 23px;
 }

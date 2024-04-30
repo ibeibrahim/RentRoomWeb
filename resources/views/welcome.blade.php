@@ -53,7 +53,7 @@
                                 <input type="text" name="rent" placeholder="rent" class="form-control">
                             </div>
                             <div class="form-group col-md-2">
-                                <button type="submit" class="btn btn-success">Search</button>
+                                <button type="submit" class="btn btn-success" style="border-radius: 5px">Search</button>
                             </div>
                         </div>
                     </form>
@@ -77,7 +77,7 @@
                             <div class="col-md-6">
                                 <div class="card m-3 house-card">
                                     <div class="card-header">
-                                        <img  src="{{ asset('storage/featured_house/'. $house->featured_image) }}" width="100%" class="img-fluid" alt="Card image">
+                                        <img  src="{{ asset('storage/featured_house/' . $house->featured_image) }}" width="100%" class="img-fluid" alt="Card image">
                                     </div>
                                     <div class="card-body">
                                         <p><h4><strong><i class="fas fa-map-marker-alt"> {{ $house->area->name }}, Sylhet</i> </strong></h4></p>
@@ -100,7 +100,7 @@
                                 </div>
                             </div>
                         @empty 
-                            <h2 class="m-auto py-2 text-white bg-dark p-3">House Not Available right now</h2>
+                            <h2 class="m-auto py-2 text-white bg-dark p-3" style="border-radius: 5px">House Not Available right now</h2>
                         @endforelse
                    </div>
                    
