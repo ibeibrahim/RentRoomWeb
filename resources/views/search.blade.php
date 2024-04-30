@@ -34,7 +34,7 @@ House Renter - Search Result
                     <p class="grey"><i class="fas fa-bed"></i> {{ $house->number_of_room }} Bedrooms <i
                             class="fas fa-bath float-right"> {{ $house->number_of_toilet }} Bathrooms</i> </p>
                     <p class="grey">
-                        <h4>৳ {{ $house->rent }} BDT</i></h4>
+                        <h4>RP {{ $house->rent }} / month </i></h4>
                     </p>
                 </div>
                 <div class="card-footer">

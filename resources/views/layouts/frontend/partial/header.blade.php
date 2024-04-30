@@ -1,21 +1,6 @@
 <header>
-
-{{--   
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-sm-12">
-        <div>
-          <a href="{{ route('welcome') }}">Rent Room</a> --}}
-          {{-- <div class="mb-3" style="margin-left: 12px;" id="time"></div> --}}
-        {{-- </div>
-      </div>
-    </div>
-  </div>
-
-   --}}
-  
   <nav class="navbar navbar-expand-lg navbar-light sticky-top justify">
-    <a class="navbar-brand font-weight-bold ml-3 text-success" href="{{ route('welcome') }}">Rent Room</a>
+    <a class="navbar-brand ml-3" id="navbarlogo" href="{{ route('welcome') }}">RentRoom</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>

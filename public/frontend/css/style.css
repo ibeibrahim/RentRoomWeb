@@ -21,6 +21,12 @@
     border-radius:10px
 }
 
+#navbarlogo {
+    color: #188B93;
+    font-weight: 800;
+    font-family: Inter;
+    letter-spacing: 1px;   
+}
 
 .name {
     font-family: 'Grandstander', cursive;
@@ -28,7 +34,6 @@
     font-size: 45px;
     margin-left: 12px;
 }
-
 
 footer {
     background-color: rgb(25, 34, 33);
@@ -60,7 +65,7 @@ footer {
 
 
 .login-register {
-    background-image: url('../img/login-register.jpg');
+    /* background-image: url('../img/login-register.jpg'); */
     background-attachment: fixed;
     background-size: cover;
 }

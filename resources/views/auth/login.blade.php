@@ -2,152 +2,98 @@
 
 @section('title','Login')
     
-
 @section('content')
-{{-- <div class="container my-5">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
-
-                <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
-                        @csrf
-
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <div class="col-md-6 offset-md-4">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-                                    <label class="form-check-label" for="remember">
-                                        {{ __('Remember Me') }}
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Login') }}
-                                </button>
-
-                                @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
-                                    </a>
-                                @endif
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div> --}}
-
 <div class="container-fluid login-register">
-    <div class="row">
-      <div class="col-md-3 col-lg-4 col-sm-2 col-xs-2">
-      
-      </div>
-      <div class="col-md-6 col-lg-4  col-sm-8 col-xs-8">
-        <div class="card">
-          <div class="card-header">
-            
-            <h3 style="color: white;"> <strong>Login</strong> </h3>
-          </div>
-
-          <div class="card-body">
-            
-             <form action="{{ route('login') }}" method="POST"> 
-
-               @csrf
-
-               @if ($errors->any())
-                            <div class="alert alert-danger">
-                                <ul>
-                                    @foreach ($errors->all() as $error)
-                                        <li>{{ $error }}</li>
-                                    @endforeach
-                                </ul>
-                            </div>
-                @endif
-
-
-
-            <div class="input-group mb-3">
-              <input type="text" class="form-control" placeholder="Enter your email" name="email" value="{{ old('email') }}">
-            </div>
-
-            <div class="input-group mb-3">
-                <input type="password" class="form-control" placeholder="Enter your password" name="password">
+    <div class="row m-0">
+        <div class="col-lg-12 p-0">
+            <!-- Card with an image on left -->
+          <div class="card m-0">
+            <div class="row">
+              <div class="col-6 m-0 p-0">
+                <img src="{{ asset('frontend/img/Registrasi.png') }}" class="img-fluid" alt="...">
               </div>
-            
-            <button type="submit" class="btn btn-primary btn-block">Login</button>
-            @if (Route::has('password.request'))
-                    <center> <a class="btn btn-link text-white" href="{{ route('password.request') }}">
-                                                {{ __('Forgot Your Password?') }}
-                            </a>
-                    </center>
-             @endif
-
-             <a href="{{ url('auth/google') }}" style="margin-top: 20px;" class="btn btn-lg btn-success btn-block">
-
-                <strong>Login With Google</strong>
-
-              </a> 
-          </form> 
-          </div>
-          
-        </div>
-      </div>
-      <div class="col-md-3 col-lg-4  col-sm-2 col-xs-2">
+              <div class="col-6 m-0 p-5">
+                <br>
+                <p class="h5 mb-0">Welcome to</p>
+                <p class="h2 card-title logo mb-0">RentRoom</p>
+                <p class="h6 card-title font-weight-normal text-black-50">Enter your email and password to access your account</p>
+                <form action="{{ route('login') }}" method="POST"> 
+                    @csrf
         
-      </div>
-    </div>
+                    @if ($errors->any())
+                                    <div class="alert alert-danger">
+                                        <ul>
+                                            @foreach ($errors->all() as $error)
+                                                <li>{{ $error }}</li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                        @endif
+        
+        
+                <label for="yourEmail" class="form-label mb-0 ">Email</label>
+                <div class="input-group mb-3">
+                    <input type="text" id="yourEmail" class="form-control" placeholder="Enter your email" name="email" value="{{ old('email') }}">
+                </div>
+                <label for="yourPass" class="form-label mb-0">Password</label>
+                <div class="input-group mb-0">
+                        <input id="yourPass" type="password" class="form-control" placeholder="Enter your password" name="password">
+                </div>
+                <div class="container">
+                    <div class="row p-0">
+                        <div class="col-6 mb-3 mt-0 pl-0">
+                            <div class="form-check ml-3">
+                                <input class="form-check-input" type="checkbox" name="remember" value="true" id="rememberMe">
+                                <label class="form-check-label remember" for="rememberMe">Remember me</label>
+                            </div>
+                        </div>
+                        <div class="col-6 mb-3 mt-0 ml-0 text-right">
+                            @if (Route::has('password.request'))
+                                    <a class="btn-link mb-0 remember" href="{{ route('password.request') }}">
+                                                            {{ __('Forgot Your Password?') }}
+                                    </a>
+                            @endif
+                        </div>
+                    </div>
+                </div>
+                    <button type="submit" class="btn btn-primary btn-block loginBtn ">Login</button>
+                    
+        
+                    <a href="{{ url('auth/google') }}" class="btn btn-primary loginBtn btn-block mb-3">Login with Google</a> 
+                </form>
+              </div>
+            </div>
+          </div><!-- End Card with an image on left -->
+        </div>
   </div>
+</div>
 @endsection
 
 
 @section('css')
 <style>
+    * {
+        font-family: Inter;
+    }
     .card{
-        background: black;
-        background-color: rgba(0,0,0,.5);
+        border-radius: 0;
+        border: 0;
         margin-top: 70px;
         margin-bottom: 70px;
     }
+    .logo{
+        color: #188B93;
+        font-weight: 800;
+    }
     .icon {
         font-size: 25px;
+    }
+    .loginBtn {
+        background-color: #188B93;
+        color: white;
+    }
+    .remember {
+        font-size: 14px;
     }
 
 </style>

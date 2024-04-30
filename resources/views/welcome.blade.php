@@ -85,7 +85,7 @@
                                         <p class="grey"><a class="address" href="{{ route('house.details', $house->id) }}"><i class="fas fa-warehouse"> {{ $house->address }}</i></a> </p>
                                         <hr>
                                         <p class="grey"><i class="fas fa-bed"></i> {{ $house->number_of_room }} Bedrooms  <i class="fas fa-bath float-right"> {{ $house->number_of_toilet }} Bathrooms</i> </p>
-                                        <p class="grey"><h4>৳ {{ $house->rent }} BDT</i></h4> </p>
+                                        <p class="grey"><h4>RP {{ $house->rent }} / month</i></h4> </p>
                                     </div>
                                     <div class="card-footer">
                                         <div class="d-flex justify-content-between">
