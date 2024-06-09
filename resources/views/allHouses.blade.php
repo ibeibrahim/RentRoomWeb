@@ -22,7 +22,7 @@
                             </div>
                             <div class="card-body">
                                 <p>
-                                    <h4><strong><i class="fas fa-map-marker-alt"> {{ $house->area->name }}, Sylhet</i>
+                                    <h4><strong><i class="fas fa-map-marker-alt"> {{ $house->area->name }}, Jawa Barat</i>
                                         </strong></h4>
                                 </p>
 

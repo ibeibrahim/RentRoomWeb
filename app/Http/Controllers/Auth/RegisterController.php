@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Http\Request;
 
 class RegisterController extends Controller
 {
@@ -83,6 +84,7 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'username' => str_slug($data['username']),
             'email' => $data['email'],
+            // 'email_verified_at' => Carbon::now(),
             'nid' => $data['nid'],
             'contact' => $data['contact'],
             'password' => Hash::make($data['password']),

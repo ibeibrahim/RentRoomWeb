@@ -1,7 +1,7 @@
 @extends('layouts.frontend.app')
 
 @section('title')
-    Rent Room - Homepage
+    RentRoom - Homepage
 @endsection
     
 @section('content')
@@ -53,7 +53,7 @@
                                 <input type="text" name="rent" placeholder="rent" class="form-control">
                             </div>
                             <div class="form-group col-md-2">
-                                <button type="submit" class="btn btn-success" style="border-radius: 5px">Search</button>
+                                <button type="submit" class="btn loginBtn" style="border-radius: 5px">Search</button>
                             </div>
                         </div>
                     </form>
@@ -80,7 +80,7 @@
                                         <img  src="{{ asset('storage/featured_house/' . $house->featured_image) }}" width="100%" class="img-fluid" alt="Card image">
                                     </div>
                                     <div class="card-body">
-                                        <p><h4><strong><i class="fas fa-map-marker-alt"> {{ $house->area->name }}, Sylhet</i> </strong></h4></p>
+                                        <p><h4><strong><i class="fas fa-map-marker-alt"> {{ $house->area->name }}, Jawa Barat</i> </strong></h4></p>
                                     
                                         <p class="grey"><a class="address" href="{{ route('house.details', $house->id) }}"><i class="fas fa-warehouse"> {{ $house->address }}</i></a> </p>
                                         <hr>
@@ -197,4 +197,13 @@
 
 
 
+@endsection
+
+@section('css')
+<style>
+    .loginBtn {
+        background-color: #188B93;
+        color: white;
+    }
+</style>
 @endsection

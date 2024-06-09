@@ -76,7 +76,7 @@ footer {
 #search {
     display: flex;
     align-items: center;
-    background: url("../img/cover.jpg");
+    background: url("../img/HomePage.png");
     background-attachment: fixed;
     background-size: cover;
     color: whitesmoke;
