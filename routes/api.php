@@ -6,7 +6,7 @@ use App\Http\Controllers\Auth\LoginController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\Auth\RegisterController;
-use App\Http\Controllers\Api\Houses\HouseController;
+use App\Http\Controllers\Api\houses\HouseController;
 
 // use App\Http\Controllers\Auth\RegisterApiController;
 
