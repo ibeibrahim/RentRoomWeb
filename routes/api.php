@@ -37,4 +37,5 @@ Route::get('/houses/sort/high-to-low', [HouseController::class, 'highToLow']);
 Route::get('/houses/sort/low-to-high', [HouseController::class, 'lowToHigh']);
 Route::get('/houses/area/{id}', [HouseController::class, 'areaWiseShow']);
 Route::post('/search', [HouseController::class, 'search']);
+Route::post('/search-by-range', [HouseController::class, 'searchByRange']);
 // Route::post('/login', [LoginAPIController::class, 'login']);

@@ -70,9 +70,8 @@ class HouseController extends Controller {
             $digit1 =  $digit2;
             $digit2 = $temp;
         }
-        $houses = House::whereBetween('rent', [$digit1, $digit2])
-                        ->orderBy('rent', 'ASC')->get();
-        return view('searchByRange', compact('houses'));
+        $houses = House::all()->whereBetween('rent',[$digit1, $digit2])->sortBy('rent');
+        return response()->json(compact('houses'), 200);
     }
 
 
