@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Auth;
 class HouseController extends Controller {
     public function allHouses(){
         $houses = House::all()->where('status', 1);
-        return response()->json($houses, 201);
+        return response()->json(compact('houses'), 201);
     }
 
     public function highToLow()
