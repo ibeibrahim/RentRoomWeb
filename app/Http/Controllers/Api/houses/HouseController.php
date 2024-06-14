@@ -31,7 +31,7 @@ class HouseController extends Controller {
 
     public function details($id){
         $house = House::findOrFail($id);
-        return view('houseDetails', compact('house'));
+        return response()->json(compact('house'), 201);
     }
     public function areaWiseShow($id){
         $area = Area::findOrFail($id);

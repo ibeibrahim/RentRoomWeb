@@ -33,6 +33,7 @@ Route::get('/test', function() {
 Route::post('/register', [RegisterController::class, 'register']);
 Route::post('/login', [AuthLoginController::class, 'login']);
 Route::get('/houses/all', [HouseController::class, 'allHouses']);
+Route::get('/house/{id}', [HouseController::class, 'details']);
 Route::get('/houses/sort/high-to-low', [HouseController::class, 'highToLow']);
 Route::get('/houses/sort/low-to-high', [HouseController::class, 'lowToHigh']);
 Route::get('/houses/area/{id}', [HouseController::class, 'areaWiseShow']);
