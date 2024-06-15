@@ -60,7 +60,7 @@ class LoginController extends Controller {
      */
     protected function authenticated(Request $request, $user)
     {
-        return new JsonResponse(['user' => $user, 'message' => 'Login successful', 'code' => '1', 'sessions' => $request->session()->getId()], 201);
+        return new JsonResponse(['user' => $user, 'message' => 'Login successful', 'code' => 1, 'sessions' => $request->session()->getId()], 201);
     }
 
     protected function sendLoginResponse(Request $request)
