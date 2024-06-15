@@ -40,11 +40,10 @@ class LoginController extends Controller {
         }
 
         if ($this->attemptLogin($request)) {
-            $request->session()->regenerate();
-            $this->clearLoginAttempts($request);
-
-            return $this->authenticated($request, $this->guard()->user())
-                        ?: new JsonResponse(['message' => 'Login successful'], 201);
+            if ($request->hasSession()){
+                $request->session()->put('auth.password_confirmed_at', time());
+            }
+            return $this->sendLoginResponse($request);
         }
 
         $this->incrementLoginAttempts($request);
@@ -61,9 +60,22 @@ class LoginController extends Controller {
      */
     protected function authenticated(Request $request, $user)
     {
-        return new JsonResponse(['user' => $user, 'message' => 'Login successful'], 201);
+        return new JsonResponse(['user' => $user, 'message' => 'Login successful', 'code' => '1', 'sessions' => $request->session()->getId()], 201);
     }
 
+    protected function sendLoginResponse(Request $request)
+    {
+        $request->session()->regenerate();
+        $this->clearLoginAttempts($request);
+        if ($response = $this->authenticated($request, $this->guard()->user())) {
+            return $response;
+        }
+        return response()->json([
+            'user' => $response,
+            'message' => 'Login successful',
+            'code' => 201, // HTTP success code
+        ]);
+    }
     /**
      * Get the failed login response instance.
      *
@@ -74,9 +86,10 @@ class LoginController extends Controller {
      */
     protected function sendFailedLoginResponse(Request $request)
     {
-        return new JsonResponse([
-            'message' => trans('auth.failed'),
-        ], 422);
+        return response()->json([
+            'message' => 'Invalid credentials',
+            'code' => 401, // HTTP unauthorized code
+        ], 401);
     }
 
     /**
