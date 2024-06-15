@@ -41,8 +41,7 @@ class SettingsController extends Controller
         if($image)
         {
              // Make Unique Name for Image 
-            $currentDate = Carbon::now()->toDateString();
-            $image_name = $currentDate.'-'.uniqid().'.'.$image->getClientOriginalExtension();
+            $image_name = $image->getClientOriginalExtension();
   
   
           // Check Dir is exists

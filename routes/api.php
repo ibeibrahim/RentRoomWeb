@@ -21,9 +21,9 @@ use App\Http\Controllers\Api\houses\HouseController;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+// Route::middleware('auth:api')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
 Route::middleware('auth:api')->group(function () {
     Route::post('/logout',[\App\Http\Controllers\Api\Auth\LoginController::class, 'logout']);
 });
@@ -40,3 +40,9 @@ Route::get('/houses/area/{id}', [HouseController::class, 'areaWiseShow']);
 Route::post('/search', [HouseController::class, 'search']);
 Route::post('/search-by-range', [HouseController::class, 'searchByRange']);
 // Route::post('/login', [LoginAPIController::class, 'login']);
+Route::group(['as' => 'renter.', 'prefix' => 'renter', 'namespace' => 'renter', 'middleware' => ['auth', 'renter', 'verified']],
+    function () {
+        Route::get('/user', function (Request $request) {
+            return $request->user();
+        });
+    });

@@ -36,7 +36,7 @@ class LoginController extends Controller {
             $this->hasTooManyLoginAttempts($request)) {
             $this->fireLockoutEvent($request);
 
-            return $this->sendLockoutResponse($request);
+            return response()->json(compact($this->sendLockoutResponse($request)));
         }
 
         if ($this->attemptLogin($request)) {
@@ -44,7 +44,7 @@ class LoginController extends Controller {
             $this->clearLoginAttempts($request);
 
             return $this->authenticated($request, $this->guard()->user())
-                        ?: new JsonResponse(['message' => 'Login successful'], 200);
+                        ?: new JsonResponse(['message' => 'Login successful'], 201);
         }
 
         $this->incrementLoginAttempts($request);
@@ -61,7 +61,7 @@ class LoginController extends Controller {
      */
     protected function authenticated(Request $request, $user)
     {
-        return new JsonResponse(['user' => $user, 'message' => 'Login successful'], 200);
+        return new JsonResponse(['user' => $user, 'message' => 'Login successful'], 201);
     }
 
     /**
@@ -93,7 +93,7 @@ class LoginController extends Controller {
 
         $request->session()->regenerateToken();
 
-        return new JsonResponse(['message' => 'Logout successful'], 200);
+        return new JsonResponse(['message' => 'Logout successful'], 201);
     }
 
     /**
