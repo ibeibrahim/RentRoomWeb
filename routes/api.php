@@ -1,13 +1,11 @@
 <?php
 
 use App\Http\Controllers\Api\Auth\LoginController as AuthLoginController;
-use App\Http\Controllers\Auth\LoginAPIController;
-use App\Http\Controllers\Auth\LoginController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\Auth\RegisterController;
 use App\Http\Controllers\Api\houses\HouseController;
-use App\Http\Controllers\Api\Renter\SettingsController;
+use App\Http\Controllers\Api\Renter\ProfilePageController;
 
 // use App\Http\Controllers\Auth\RegisterApiController;
 
@@ -53,6 +51,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 Route::middleware('auth:sanctum')->group(function () {
-    Route::get('/profile', [SettingsController::class, 'showProfile']);
+    Route::get('/profile', [ProfilePageController::class, 'showProfile']);
     Route::post('/logout', [AuthLoginController::class, 'logout']);
 });

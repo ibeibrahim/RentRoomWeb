@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Auth;
 use Intervention\Image\Laravel\Facades\Image;
 
 
-class SettingsController extends Controller
+class ProfilePageController extends Controller
 {
     public function showProfile(){
         $profile = User::where('id', Auth::id())->first();
