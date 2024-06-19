@@ -24,10 +24,10 @@ use App\Http\Controllers\Api\Renter\SettingsController;
 
 // Route::middleware('auth:api')->get('/user', function (Request $request) {
 //     return $request->user();
+// // });
+// Route::middleware('auth:api')->group(function () {
+//     Route::post('/logout',[\App\Http\Controllers\Api\Auth\LoginController::class, 'logout']);
 // });
-Route::middleware('auth:api')->group(function () {
-    Route::post('/logout',[\App\Http\Controllers\Api\Auth\LoginController::class, 'logout']);
-});
 Route::get('/test', function() {
     return response()->json(201);
     });
@@ -41,15 +41,18 @@ Route::get('/houses/area/{id}', [HouseController::class, 'areaWiseShow']);
 Route::post('/search', [HouseController::class, 'search']);
 Route::post('/search-by-range', [HouseController::class, 'searchByRange']);
 // Route::post('/login', [LoginAPIController::class, 'login']);
-Route::group(['as' => 'renter.', 'prefix' => 'renter', 'namespace' => 'renter', 'middleware' => ['auth', 'renter', 'verified']],
-    function () {
-        Route::get('/user', function (Request $request) {
-            $profile = $request->user();
-            return response()->json(['user'=> $profile], 200);
-        });
-        Route::get('/profile', [SettingsController::class, 'showProfile']);
-    });
+// Route::group(['as' => 'renter.', 'prefix' => 'renter', 'namespace' => 'renter', 'middleware' => ['auth', 'renter', 'verified']],
+//     function () {
+//         Route::get('/user', function (Request $request) {
+//             $profile = $request->user();
+//             return response()->json(['user'=> $profile], 200);
+//         });
+//     });
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
+});
+Route::middleware('auth:sanctum')->group(function () {
+    Route::get('/profile', [SettingsController::class, 'showProfile']);
+    Route::post('/logout', [AuthLoginController::class, 'logout']);
 });
