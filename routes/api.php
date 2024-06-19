@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\Auth\RegisterController;
 use App\Http\Controllers\Api\houses\HouseController;
+use App\Http\Controllers\Api\Renter\SettingsController;
 
 // use App\Http\Controllers\Auth\RegisterApiController;
 
@@ -43,6 +44,8 @@ Route::post('/search-by-range', [HouseController::class, 'searchByRange']);
 Route::group(['as' => 'renter.', 'prefix' => 'renter', 'namespace' => 'renter', 'middleware' => ['auth', 'renter', 'verified']],
     function () {
         Route::get('/user', function (Request $request) {
-            return $request->user();
+            $profile = $request->user();
+            return response()->json(['user'=> $profile], 200);
         });
+        Route::get('/profile', [SettingsController::class, 'showProfile']);
     });

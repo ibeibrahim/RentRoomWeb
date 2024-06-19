@@ -88,14 +88,14 @@ class HouseController extends Controller {
 
         if(Booking::where('address', $house->address)->where('booking_status', "booked")->count() > 0){
             session()->flash('danger', 'This house has already been booked!');
-            return redirect()->back();
+            return response()->json(compact('houses',['danger', 'This house has already been booked!']), 202);
         }
 
 
 
         if(Booking::where('address', $house->address)->where('renter_id', Auth::id())->where('booking_status', "requested")->count() > 0){
             session()->flash('danger', 'Your have already sent booking request of this home');
-            return redirect()->back();
+            return response()->json(compact('houses',['danger', 'Your have already sent booking request of this home']), 202);
         }
 
 
@@ -116,8 +116,8 @@ class HouseController extends Controller {
 
 
         session()->flash('success', 'House Booking Request Send Successfully');
-        return redirect()->back();
- 
+        // return redirect()->back();
+        return response()->json(compact('houses','booking'), 200);
 
     }
 

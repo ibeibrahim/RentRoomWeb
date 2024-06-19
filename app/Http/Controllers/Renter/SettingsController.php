@@ -9,7 +9,9 @@ use Illuminate\Support\Facades\Storage;
 use App\User;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
-use Intervention\Image\Facades\Image;
+// use Intervention\Image\Image;
+use Intervention\Image\Laravel\Facades\Image;
+
 
 class SettingsController extends Controller
 {
