@@ -15,8 +15,8 @@ use Intervention\Image\Laravel\Facades\Image;
 
 class ProfilePageController extends Controller
 {
-    public function showProfile(){
-        $profile = User::where('id', Auth::id())->first();
+    public function showProfile(Request $request){
+        $profile = $request->user();
         return response()->json([
             'profile' => $profile,
             'message' => 'Show Profile Successfully',
