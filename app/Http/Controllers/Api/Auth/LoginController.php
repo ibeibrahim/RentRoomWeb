@@ -60,7 +60,15 @@ class LoginController extends Controller {
      */
     protected function authenticated(Request $request, $user)
     {
-        return new JsonResponse(['user' => $user, 'message' => 'Login successful', 'code' => 1, 'sessions' => $request->session()->getId()], 201);
+        $token = $user->createToken('auth_token')->plainTextToken;
+        return new JsonResponse([
+            'user' => $user, 
+            'message' => 'Login successful', 
+            'code' => 1, 
+            'sessions' => $request->session()->getId(),
+            'access_token' => $token,
+            'token_type' => 'Bearer'
+        ], 201);
     }
 
     protected function sendLoginResponse(Request $request)
@@ -105,7 +113,7 @@ class LoginController extends Controller {
         $request->session()->invalidate();
 
         $request->session()->regenerateToken();
-
+        $request->user()->currentAccessToken()->delete();
         return new JsonResponse(['message' => 'Logout successful'], 201);
     }
 
