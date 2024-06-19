@@ -52,5 +52,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 Route::middleware('auth:sanctum')->group(function () {
     Route::get('/profile', [ProfilePageController::class, 'showProfile']);
+    Route::post('/profile/update', [ProfilePageController::class, 'updateProfile']);
     Route::post('/logout', [AuthLoginController::class, 'logout']);
 });
